@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>myRobot</title>
+	<link rel="stylesheet" type="text/css" href="css/robot.css">
+	<link type="text/css" href="css/jquery.mCustomScrollbar.css" rel="stylesheet">
+</head>
+<body>
+	<div class="header">
+		<div class="header_title">
+			<span>讨论发言</span>
+		</div>
+	</div>
+	<div class="Central">
+		<div class="central-left">
+			
+		</div>
+		<div class="central-right">
+			<div>相关内容:</div>
+			<div id="aboutcontent">
+				无
+			</div>
+			<div>其他内容:</div>
+			<div id="othercontent">
+				无
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="footer">
+		<div class="msg_enter">
+			<input type="text" name="message" class="message" />
+			<input type="button" class="talk_send" title="发送" value="发送"/>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="js/jquery.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/layer/layer.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/juicer-min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/common.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/robot.js" charset="utf-8"></script>
+
+	<script>
+		juicer.set({  
+			'tag::operationOpen': '{@',  
+			'tag::operationClose': '}',  
+			'tag::interpolateOpen': '{{=',  
+			'tag::interpolateClose': '}}'  
+		});  
+	</script>
+
+	<script id="robot_tpl" type="text/template">
+		<div class="talk_robot">
+			<div class="robot_head_photo"><img src="images/thumbs/robottx1.png" alt="头像">机器人</div>
+			<div class="robot_bubble_start"><img src="images/robot_bubble_start.png"></div>
+			<div class="robot_bubble">
+				<div class="robot_context">{{=message}}</div>
+				<div><span class="talk_time">{{=time}}</span></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="clearfix"></div>
+	</script>
+
+	<script id="me_tpl" type="text/template">
+		<div class="talk_me">
+			<div class="me_head_photo"><img src="images/thumbs/robottx2.jpg" alt="头像">我</div>
+			<div class="me_bubble_start"><img src="images/me_bubble_start.png"></div>
+			<div class="me_bubble">
+				<div>{{=message}}</div>
+				<div><span class="talk_time">{{=time}}</span></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="clearfix"></div>
+	</script>
+		
+	<script>
+		
+	</script>
+</body>
+</html>
