@@ -1,6 +1,6 @@
 ### myRobot
 
-//因为调用接口，所有会出现没有回答的情况，可以下载该项目运行（必须有网络）
+//因为调用接口，在线演示会出现没有回答的情况，可以下载该项目运行（必须有网络）
 
 Demo演示：[https://zhangyuanliang.github.io/myRobot/robot.html](https://zhangyuanliang.github.io/myRobot/robot.html)
 
