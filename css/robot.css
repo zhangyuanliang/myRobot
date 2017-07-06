@@ -154,6 +154,7 @@ table { border-collapse:collapse }
 	border-radius: 5px;
 	border: 1px solid #3098ff;
 	font-family: "microsoft yahei", tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
+	outline: none;
 }
 .message:hover{
 	border: 1px solid #1351b6;
@@ -171,6 +172,7 @@ table { border-collapse:collapse }
 	font-family: "微软雅黑";
 	border-radius: 5px;
 	-moz-border-radius: 5px;
+	outline: none;
 }
 
 
