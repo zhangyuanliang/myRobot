@@ -10,17 +10,26 @@ img { border:none }
 ol,ul,li { list-style:none }
 input, textarea, select, button { font:14px Verdana,Helvetica,Arial,sans-serif }
 table { border-collapse:collapse }
-/* html {overflow-y: scroll}  */
+html,body {height: 100%; width: 100%;}
 /* css 清除浮动*/
 .clearfix:after { content: "."; display: block; height:0; clear:both; visibility: hidden }
 .clearfix { *zoom:1 }
 
+.wrap {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0
+}
 .header_title,.central-left,.central-right,.msg_enter { padding-left: 12px; }
 .central-left { padding-right: 5px }
 .header { 
+	display: flex;
+  	flex-direction: column;
+  	justify-content: center;
 	width: 100%;
-	height: 46px;
-	line-height: 46px;
+	height: 6%;
 	font-size: 1.5em;
 	color: #f2e5ff;
 	background: #3098ff;
@@ -28,14 +37,13 @@ table { border-collapse:collapse }
 }
 .central {
 	width: 100%;
-    height: 500px;
+    height: 85%;
 }
 .central-left {
 	width: 70%;
-    height: 510px;
+    height: 100%;
     float: left;
     background-color: #f6f6f6;
-    /* padding-top: 10px; */
 }
 .talk_robot,.talk_me {
 	padding-top: 10px;
@@ -120,8 +128,9 @@ table { border-collapse:collapse }
 }
 
 .central-right {
+	box-sizing: border-box;
 	width: 27%;
-	height: 500px;
+	height: 100%;
 	border-left: 1px solid #D2D6E1;
 	padding-top: 10px;
 	float: left;
@@ -134,7 +143,7 @@ table { border-collapse:collapse }
 }
 
 .footer {
-	height: 80px;
+	height: 9%;
     width: 100%;
     border-top: 1px solid #D2D6E1;
 }
