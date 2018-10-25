@@ -16,11 +16,12 @@ $(function(){
 		//更新滚动条
 		updateScrollbar('.central-left');
 		//返回答案
-		data = {
+		var data = {
     		'key': APIKEY,
     		'info': message,
     		'userid': '123456'
     	};
+		/* 
 		$.ajax({
 			type: "POST",
 			data: data,
@@ -35,9 +36,44 @@ $(function(){
 				//更新滚动条
 				updateScrollbar('.central-left');
 			}
-		});
+		}); */
+		
+		axios({
+			method: 'post',
+			url: 'http://www.tuling123.com/openapi/api',
+			params: data,
+			timeout: 1000,
+			responseType: 'json' // default
+		})
+		.then(function (response) {
+			var answer_data = {message: response.data.text};
+			answer_data.time = (new Date()).pattern("yyyy-MM-dd HH:mm:ss");
+			var html = juicer($('#robot_tpl').html(), answer_data);
+			$('.central-left .mCSB_container').append(html);
+			//更新滚动条
+			updateScrollbar('.central-left');
+		})
+		.catch(function (error) {
+			console.log(error);
+		}); 
+		/* // fetch 跨域存在问题，可参考 fetch-jsonp
+		var url = 'http://www.tuling123.com/openapi/api';
+		fetch(url, {
+			method: 'post',
+      mode: "no-cors", //允许跨域 no-cors不允许跨域
+			body: JSON.stringify(data), // data can be `string` or {object}!
+			headers: new Headers({
+				'Content-Type': 'application/json'
+			})
+		}).then(res => {
+			console.log(res);
+			return res;
+		})
+		.catch(error => console.error('Error:', error))
+		.then(response => console.log('Success:', response)); */
 
 	})
+	
 	$("body").keydown(function() {
 		if (event.keyCode == "13") {//keyCode=13是回车键
 			$('.talk_send').trigger('click');
