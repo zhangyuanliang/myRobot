@@ -5,7 +5,7 @@ $(function(){
 	$(".central-left").mCustomScrollbar();
 
 	$('.talk_send').on('click', function(){
-		//发送消息
+		//发送消息 
 		var message = $('input[name="message"]').val();
 		if (!message) return false;
 		var ask_data = {message: message};
